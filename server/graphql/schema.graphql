@@ -1,0 +1,10 @@
+type Book {
+    author: string!
+    name: string!
+    description: string
+}
+
+type Query {
+    getBooks(): [Book]!
+    
+}
