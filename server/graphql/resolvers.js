@@ -1,6 +1,6 @@
-const { getBooks } = require('./db')
+const { books } = require('./db')
 exports.resolvers = {
     Query: {
-      getBooks: (_, {}) => getBooks,
+      getBooks: (_, {}) => books,
     },
 };
