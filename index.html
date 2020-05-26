@@ -7,8 +7,18 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
 </head>
-<body>
-  <h1>Hello Graphql!</h1>
+<body onload="run()">
+  <h1>Hello Graphql!</h1> 
+  <div class="booklists">
+  </div>
+
+  <form onsubmit="addBook()">
+    제목 <input type="text" name="title">
+    저자 <input type="text" name="author">
+    설명 <input type="text" name="description">
+    <button type="submit">추가</button>
+
+  </form>
 </body>
 <script src='index.js'></script>
 
