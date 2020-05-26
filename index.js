@@ -4,6 +4,12 @@ var query = `query {
     }
 }`;
 
+/*
+getBooks{ // 쿼리 명
+    title // 필드
+}
+*/
+
 fetch('http://localhost:4000/graphql', {
     method: 'POST',
     headers: {
