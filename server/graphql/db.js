@@ -1,5 +1,5 @@
 
-const books = [
+const Books = [
     {
         id : 0,
         title : "해리 포터와 마법사의 돌",
@@ -26,19 +26,58 @@ const books = [
     }
 ]
 
-const movies = [
+const Movies = [
     {
-        id : 1,
+        id : 0,
         title : "해리 포터와 마법사의 돌",
-        relased : 2001
+        release : 2001
     },
     {
         id : 1,
         title : "해리 포터와 비밀의 방",
-        relased : 2002
+        release : 2002
+    },
+    {
+        id : 3,
+        title : "반지의 제왕",
+        release : 2002
+    },
+    {
+        id: 4,
+        title : "신세계",
+        release: 2013
     }
 ]
 
-const getBookById = (id)=> books[id]
 
-module.exports ={getBookById, books, movies}
+const Authors = [
+    {
+        name : "J.K. 롤링",
+        books : ["해리 포터와 마법사의 돌", "해리 포터와 비밀의 방"],
+        age : 54,
+        gender : "Female"
+    },
+    {
+        name : "J. R. R. 톨킨",
+        books : ["반지의 제왕"],
+        age : 81,
+        gender : "Male"
+    },
+    {
+        name : "허준",
+        books : ["동의보감"],
+        gender : "Female"
+    },
+]
+
+const Items = [
+    { name: "J.K. 롤링", subject: "해리포터"},
+    { name: "한강", age: 33 },
+    { name: "헤겔", subject: "변증법"},
+    { name: "허준", subject: "동의보감"},
+    { name: "배성희", age: 25 },
+    { name: "김철수", age: 20 }
+];
+const getBookById = (id)=> Books[id]
+
+module.exports ={getBookById, Books, Movies, Authors, Items}
