@@ -23,6 +23,14 @@ exports.resolvers = {
       }
       Books.push(book)
       return book
+    },
+    deleteBook: (_, {title}) => {
+      const found = Books.find((book)=> book.title === title);
+      const idx = Books.indexOf(found);
+      if(idx > -1) {
+        Books.splice(idx, 1);
+        return found;
+      }
     }
   },
 
