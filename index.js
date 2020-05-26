@@ -1,10 +1,17 @@
-const query = `query { 
+const getBooks = `query { 
     getBooks{
         title
         author
     }
 }`;
-
+const addBookMutation = `mutation addBook($author: String!, $title: String!, $description: String) { 
+    addBook(id:30, author:$author, title:$title, description: $description){
+        id
+        author
+        title
+        description
+    }
+}`;
 function run() {
     fetch('http://localhost:4000/graphql', {
         method: 'POST',
@@ -14,7 +21,7 @@ function run() {
             'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
-            query
+            query : getBooks
         })
     }).then(r => r.json()).then(data => {
         const list = document.querySelector('.booklists');
@@ -31,15 +38,9 @@ function run() {
 
 
 function addBook() {
-
-    const mutation = `mutation{ 
-    addBook(id:30, author:"한강", title:"소년이 온다"){
-        id
-        author
-        title
-        description
-    }
-    }`;
+    const title = document.getElementById("title").value;
+    const author = document.getElementById("author").value;
+    const description = document.getElementById("description").value;
 
     fetch('http://localhost:4000/graphql', {
         method: 'POST',
@@ -49,7 +50,12 @@ function addBook() {
             'Access-Control-Allow-Origin': '*'
         },
         body: JSON.stringify({
-            query: mutation
+            query: addBookMutation,
+            variables: {
+                author,
+                title,
+                description
+            }
         })
     }).then(r => console.log(r))
 }
