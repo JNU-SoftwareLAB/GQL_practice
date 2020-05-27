@@ -36,6 +36,7 @@ function run() {
             query : getBooks
         })
     }).then(r => r.json()).then(data => {
+        console.log(data);
         const list = document.querySelector('.booklists');
         const books = data.data.getBooks;
 
@@ -68,7 +69,7 @@ function addBook() {
                 description
             }
         })
-    }).then(r => console.log(r))
+    }).then(r => console.log(r)).then(alert("Insert Complete"));
 }
 
 function deleteBook(e){
@@ -87,5 +88,5 @@ function deleteBook(e){
                 title: title.id
             }
         })
-    }).then(r => r.json()).then((data)=>console.log(data));
+    }).then(r => r.json()).then(alert("Delete Complete"));
 }

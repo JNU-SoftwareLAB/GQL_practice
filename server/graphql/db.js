@@ -71,12 +71,18 @@ const Authors = [
 ]
 
 const Items = [
-    { name: "J.K. 롤링", subject: "해리포터"},
-    { name: "한강", age: 33 },
-    { name: "헤겔", subject: "변증법"},
-    { name: "허준", subject: "동의보감"},
-    { name: "배성희", age: 25 },
-    { name: "김철수", age: 20 }
+    { name: "J.K. 롤링", title: "해리포터와 죽음의 성물"},
+    {
+        id: 4,
+        title : "신세계",
+        release: 2013
+    },
+    {
+        id : 2,
+        title : "동의보감",
+        author : "허준",
+        description : "《동의보감》은 허준 선생이 선조의 명을 받아 중국과 우리나라의 의학 서적을 하나로 모은백과사전으로서, 1596년부터 편찬하여 1610년에 완성된 의학서이다."
+    }
 ];
 const getBookById = (id)=> Books[id]
 

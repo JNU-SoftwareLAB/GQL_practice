@@ -12,28 +12,30 @@ type Book {
 
 type Movie {
     id: Int
-    title: String
+    title: String!
     release: Int
 }
 
 type Author {
-    name: String!
+    name: String
     gender: String
     age: Int
 }
-
-union Infos = Author | Movie
 
 type Query {
     getBooks: [Book]!,
     bookCount: Int!
     getBookById(id: Int): Book!
     getAuthorInfo: [Author]!
-    getInfo: [Infos]!
+    getInfo: [SearchResult]!
 }
 
 type Mutation {
     addBook(id: Int! author: String! title: String! description: String = "설명"): Book!
     deleteBook(title:String!) : Book!
 }
+
+
+union SearchResult = Book | Movie
+
 `
